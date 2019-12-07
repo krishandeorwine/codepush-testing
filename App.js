@@ -23,6 +23,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import codePush from 'react-native-code-push';
 
 const App: () => React$Node = () => {
   return (
@@ -106,4 +107,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+let codePushOptions = { 
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME, 
+  installMode: codePush.InstallMode.ON_NEXT_RESUME 
+}
+
+export default codePush(codePushOptions)(App);
