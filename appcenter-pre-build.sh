@@ -8,9 +8,9 @@ set | egrep -e $ENV_WHITELIST | sed 's/^RN_//g' > .env
 printf "\n.env created with contents:\n\n"
 cat .env
 
-ENV_WHITELIST=${ENV_WHITELIST:-"^RN_"}
+ENV_WHITELIST=${ENV_WHITELIST:-"^AN_"}
 printf "Creating an local.properties file with the following whitelist:\n"
 printf "%s\n" $ENV_WHITELIST
-set | egrep -e $ENV_WHITELIST | sed 's/^RN_//g' > ./android/local.properties
+set | egrep -e $ENV_WHITELIST | sed 's/^AN_//g' > ./android/local.properties
 printf "\n local.properties created with contents:\n\n"
 cat ./android/local.properties
